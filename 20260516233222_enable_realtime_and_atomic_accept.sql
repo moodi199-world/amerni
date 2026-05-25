@@ -1,784 +1,252 @@
-export type Lang = 'ar' | 'en';
-
-export const translations = {
-  ar: {
-    // COMMON
-    loading: 'يحمّل...',
-    cancel: 'إلغاء',
-    back: 'ارجع',
-    search: 'دوّر',
-    filter: 'فلتر',
-    all: 'الكل',
-
-    // NAVBAR
-    nav_how_it_works: 'كيف تشتغل',
-    nav_features: 'المميزات',
-    nav_trust: 'الثقة والأمان',
-    nav_sign_in: 'دخول',
-    nav_get_started: 'ابدأ الحين',
-    nav_account: 'حسابي',
-    nav_my_dashboard: 'أشغالي',
-    nav_worker_panel: 'لوحة الشغل',
-    nav_admin_panel: 'الإدارة',
-    nav_sign_out: 'خروج',
-
-    // LANDING
-    hero_badge: 'أمرني — اطلب أي شي وإحنا نوصّله لك',
-    hero_title_1: 'طلباتك وأشغالك ومهامك.',
-    hero_title_2: 'تنجز بواسطة أشخاص موثوقين',
-    hero_subtitle: 'أي طلب تبيه اكتبه والذكاء الاصطناعي يساعدك في اختيار الشخص اللي بيسوي لك الطلب بأفضل طريقة.',
-    hero_input_placeholder: 'اكتب اللي تبيه بالعربي أو الإنجليزي...',
-    hero_try_text: 'جرّب: "احجزلي موعد في أبشر" أو "صمملي شعار لمقهاي"',
-    hero_start_task: 'ابدأ طلبك',
-    hero_become_worker: 'اشتغل معنا',
-    hero_free: 'الطلب مجاني',
-    hero_verified: 'أشخاص موثوقين بس',
-    hero_secure: 'الدفع آمن',
-
-    stat_tasks: 'طلب اتنجز',
-    stat_workers: 'شخص موثوق',
-    stat_satisfaction: 'نسبة الرضا',
-    stat_response: 'متوسط وقت الرد',
-    stat_tasks_val: '+10,000',
-    stat_workers_val: '+2,400',
-    stat_satisfaction_val: '98%',
-    stat_response_val: '< ساعتين',
-
-    section_how_badge: 'كيف تشتغل؟',
-    section_how_title: 'كيف تشتغل أمرني',
-    section_how_sub: 'من الطلب للتنفيذ في دقايق. ما فيه تعقيد.',
-
-    step1_title: 'اكتب اللي تبيه',
-    step1_desc: 'اكتب طلبك بأي كلام — عربي أو إنجليزي. الذكاء الاصطناعي يفهم قصدك على طول.',
-    step2_title: 'الذكاء الاصطناعي يرتب طلبك',
-    step2_desc: 'يحول كلامك لطلب واضح مع التصنيف والسعر التقريبي والوقت المتوقع.',
-    step3_title: 'شخص موثوق يسوي لك الطلب',
-    step3_desc: 'شخص موثوق يقبل طلبك وينجزه وتقدر تتابعه خطوة بخطوة مع محادثة مباشرة.',
-
-    section_features_badge: 'ليش أمرني؟',
-    section_features_title: 'كل اللي تحتاجه في مكان واحد',
-    section_features_sub: 'كل اللي تبيه لتنجز أشغالك — بالذكاء الاصطناعي وأشخاص متخصصين.',
-
-    feat_ai_title: 'الذكاء الاصطناعي يفهم طلبك',
-    feat_ai_desc: 'تكتب بأي كلام وهو يفهم قصدك وينظم الطلب تلقائياً بدون تعقيد.',
-    feat_verified_title: 'أشخاص موثوقين',
-    feat_verified_desc: 'كل شخص عندنا يمر بتحقق من الهوية الوطنية وموافقة يدوية قبل ما يشتغل.',
-    feat_tracking_title: 'تابع كل خطوة',
-    feat_tracking_desc: 'تقدر تتابع كل خطوة في تنفيذ طلبك مع تحديثات لحظية ومحادثة داخل التطبيق.',
-    feat_saudi_title: 'مصممة للسعودي',
-    feat_saudi_desc: 'مبنية للمملكة — أبشر وخدمات حكومية وأعمال محلية ودعم اللغة العربية.',
-    feat_secure_title: 'دفع آمن ومضمون',
-    feat_secure_desc: 'فلوسك محفوظة لحين ما ينجز الشغل. ما راح تخسر شي.',
-    feat_quality_title: 'شغل من مستوى 5 نجوم',
-    feat_quality_desc: 'أشخاص عندهم تقييمات وسجل واضح يضمن لك شغل متميز كل مرة.',
-
-    section_trust_badge: 'الأمان والثقة',
-    section_trust_title: 'مبنية على الثقة. وكل شخص عندنا موثوق.',
-    section_trust_body: 'في المملكة، الثقة هي الأساس. عشان كذا كل شخص عندنا يمر بتحقق صارم من الهوية وفحص الخلفية وموافقة يدوية قبل ما يقبل أي طلب.',
-
-    trust_1: 'التحقق من الهوية الوطنية السعودية',
-    trust_2: 'عندنا متخصصين في الخدمات الحكومية',
-    trust_3: 'فلوسك محمية لحين إتمام الشغل',
-    trust_4: 'فريق حل المشاكل والخلافات',
-    trust_5: 'خصوصيتك محمية وبياناتك سرية',
-    trust_6: 'دعم بالعربي والإنجليزي',
-
-    cta_badge: 'جاهز تبدأ؟',
-    cta_title: 'أشغالك وطلباتك تنجز بواسطة متخصصين',
-    cta_body: 'انضم لآلاف السعوديين اللي يثقون في أمرني لإنجاز طلباتهم — من المواعيد الحكومية للمشاريع الإبداعية.',
-    cta_first_task: 'ابدأ أول طلب',
-    cta_worker_btn: 'اشتغل معنا',
-
-    footer_rights: '© 2025 أمرني. مصممة للسعودية. جميع الحقوق محفوظة.',
-    footer_privacy: 'الخصوصية',
-    footer_terms: 'الشروط',
-    footer_support: 'الدعم',
-
-    // EXAMPLE TASKS
-    example_1: 'احجزلي موعد حكومي في أبشر',
-    example_2: 'صمملي شعار احترافي لمقهاي',
-    example_3: 'اكتبلي خطة عمل لمشروع توصيل أكل',
-    example_4: 'دورلي على أحسن عروض عقارات في الرياض',
-
-    // CATEGORIES
-    cat_Admin: 'إداري',
-    cat_Design: 'تصميم',
-    cat_Research: 'بحث',
-    cat_Personal: 'شخصي',
-    cat_Business: 'أعمال',
-    cat_Legal: 'قانوني',
-    cat_Tech: 'تقنية',
-    cat_Writing: 'كتابة',
-    cat_Other: 'أخرى',
-
-    // URGENCY
-    urgency_low: 'مو عاجل',
-    urgency_medium: 'عادي',
-    urgency_high: 'مهم',
-    urgency_urgent: 'عاجل حيل',
-
-    // STATUS
-    status_pending: 'في الانتظار',
-    status_ai_processing: 'الذكاء الاصطناعي يشتغل',
-    status_waiting_for_worker: 'ندور لك شخص',
-    status_in_progress: 'قاعد يشتغل',
-    status_completed: 'خلص',
-    status_disputed: 'فيه مشكلة',
-    status_cancelled: 'ملغي',
-
-    // VERIFICATION
-    verify_none: 'ما تحقق منه',
-    verify_basic: 'تحقق بسيط',
-    verify_verified: 'موثوق',
-    verify_trusted: 'موثوق حيل',
-
-    // AUTH MODAL
-    auth_sign_in_tab: 'دخول',
-    auth_create_tab: 'سجل حساب',
-    auth_full_name: 'اسمك الكامل',
-    auth_full_name_placeholder: 'أحمد العتيبي',
-    auth_email: 'الإيميل',
-    auth_email_placeholder: 'you@example.com',
-    auth_phone: 'رقم الجوال (اختياري)',
-    auth_phone_placeholder: '+966 5X XXX XXXX',
-    auth_password: 'كلمة المرور',
-    auth_password_placeholder_signup: '٨ أحرف على الأقل',
-    auth_password_placeholder_login: 'كلمة مرورك',
-    auth_submit_signin: 'ادخل على أمرني',
-    auth_submit_signup: 'سجّل الحين',
-    auth_no_account: 'ما عندك حساب؟',
-    auth_have_account: 'عندك حساب؟',
-    auth_signup_link: 'سجّل الحين',
-    auth_signin_link: 'دخول',
-    auth_terms: 'بالمتابعة توافق على الشروط وسياسة الخصوصية.',
-    auth_err_name: 'اكتب اسمك الكامل.',
-    auth_err_password: 'كلمة المرور لازم تكون ٨ أحرف على الأقل.',
-    auth_err_exists: 'في حساب بهذا الإيميل موجود.',
-    auth_err_invalid: 'الإيميل أو كلمة المرور غلط، جرب ثاني.',
-
-    // USER DASHBOARD
-    dash_welcome: 'هلا،',
-    dash_subtitle: 'تابع طلباتك وأشغالك',
-    dash_new_task_btn: 'طلب جديد',
-    dash_new_task_title: 'طلب جديد',
-    dash_new_task_sub: 'اكتب اللي تبيه',
-    dash_active: 'الطلبات الشغّالة',
-    dash_completed_stat: 'اللي خلصت',
-    dash_total: 'كل الطلبات',
-    dash_no_tasks: 'ما عندك طلبات',
-    dash_no_tasks_sub: 'اكتب أول طلب لك والذكاء الاصطناعي يتكفل بالباقي.',
-    dash_create_task: 'اكتب طلب',
-    dash_est_budget: 'السعر التقريبي',
-    dash_urgency: 'الأهمية',
-    dash_created: 'وقت الطلب',
-    dash_verification: 'التحقق من الهوية',
-    dash_verify_required: 'مطلوب',
-    dash_verify_not_required: 'مو مطلوب',
-    dash_attachments: 'الملفات المرفقة',
-    dash_no_attachments: 'ما في ملفات.',
-    dash_back_tasks: 'ارجع للطلبات',
-
-    ai_greeting: 'هلا! أنا مساعدك الذكي. اكتبلي اللي تبيه — بالعربي أو الإنجليزي — وأنا أرتبه وأدورلك الشخص المناسب.',
-    ai_placeholder: 'اكتب اللي تبيه بالعربي أو الإنجليزي...',
-    ai_structured: 'رتبت لك الطلب. شوف اللي طلعت معي:',
-    ai_error: 'صار خطأ. جرب مرة ثانية.',
-    ai_rephrase: 'عذراً، ما فهمت. عيد اكتب طلبك بشكل ثاني.',
-    ai_refine_reply: 'لا بأس! زيد تفاصيل وأنا أعيد الترتيب.',
-    ai_label: 'مساعد AI',
-    ai_post_task: 'أرسل الطلب',
-    ai_refine: 'عدّل',
-    ai_est_price: 'السعر التقريبي',
-
-    task_chat_title: 'محادثة الطلب',
-    task_chat_placeholder: 'اكتب رسالة...',
-    task_chat_waiting: 'ندور لك شخص يسوي الطلب...',
-    task_chat_empty: 'ما في رسائل. لما يقبل أحد طلبك تقدر تكلمه هنا.',
-
-    // WORKER DASHBOARD
-    worker_title: 'لوحة الشغل',
-    worker_tab_available: 'الطلبات المتاحة',
-    worker_tab_my_tasks: 'شغلي',
-    worker_earnings: 'مكاسبك',
-    worker_completed: 'اللي خلصت',
-    worker_rating: 'تقييمك',
-    worker_active: 'الطلبات قاعد تشتغل عليها',
-    worker_no_tasks: 'ما في طلبات الحين. طالع ثاني بعدين!',
-    worker_no_my_tasks: 'ما قبلت أي طلب بعد. طالع الطلبات المتاحة وابدأ.',
-    worker_accept: 'قبل الطلب',
-    worker_mark_complete: 'علّم خلص',
-    worker_verify_req: 'يحتاج تحقق هوية',
-    worker_chat_title: 'كلّم صاحب الطلب',
-    worker_chat_placeholder: 'اكتب رسالة لصاحب الطلب...',
-    worker_chat_accept_first: 'قبل الطلب أول عشان تكلمه',
-    worker_upload_title: 'ارفع الملفات',
-    worker_upload_sub: 'ارفع اللي شغلته وملفات التسليم هنا.',
-    worker_upload_click: 'اضغط لترفع',
-    worker_pending_approval: 'بانتظار الموافقة',
-    worker_system_msg: 'قبل أحد طلبك وراح يبدأ الحين.',
-    worker_back: 'ارجع',
-    worker_budget: 'السعر',
-    worker_posted: 'وقت النشر',
-
-    become_worker_title: 'اشتغل معنا',
-    become_worker_sub: 'انضم لشبكتنا من الأشخاص الموثوقين وابدأ تكسب من خلال إنجاز طلبات العملاء بالمملكة.',
-    become_worker_p1: 'حدد وقتك وتوفرك بنفسك',
-    become_worker_p2: 'اختار الطلبات اللي تناسب مهاراتك',
-    become_worker_p3: 'استلم فلوسك بأمان عبر المنصة',
-    become_worker_p4: 'ابني سمعتك من خلال التقييمات',
-    become_worker_btn: 'اشتغل معنا الحين',
-
-    // ADMIN
-    admin_title: 'لوحة الإدارة',
-    admin_sub: 'أدر المنصة — المستخدمين والطلبات وتحقق الأشخاص.',
-    admin_tab_overview: 'نظرة عامة',
-    admin_tab_users: 'المستخدمين',
-    admin_tab_tasks: 'الطلبات',
-    admin_tab_workers: 'الأشخاص',
-    admin_total_users: 'إجمالي المستخدمين',
-    admin_verified_workers: 'الأشخاص الموثوقين',
-    admin_active_tasks: 'الطلبات الشغّالة',
-    admin_disputes: 'المشاكل',
-    admin_registered: 'حسابات مسجلة',
-    admin_active_on: 'نشطين في المنصة',
-    admin_in_progress_desc: 'قاعدة تشتغل',
-    admin_needs_attention: 'تحتاج اهتمام',
-    admin_pending_approvals: 'طلبات الموافقة المعلقة',
-    admin_applied: 'انضم',
-    admin_approve: 'وافق',
-    admin_reject: 'ارفض',
-    admin_revoke: 'الغِ',
-    admin_resolve: 'حُلّها',
-    admin_cancel_task: 'الغِها',
-    admin_recent_tasks: 'آخر الطلبات',
-    admin_budget: 'السعر',
-    admin_search_users: 'دوّر على مستخدم...',
-    admin_search_tasks: 'دوّر على طلب...',
-    admin_col_user: 'المستخدم',
-    admin_col_role: 'الدور',
-    admin_col_phone: 'الجوال',
-    admin_col_joined: 'تاريخ الانضمام',
-    admin_no_name: 'بلا اسم',
-    admin_pending_badge: 'معلّق',
-    admin_approved_badge: 'موافَق عليه',
-
-    // PHONE OTP FLOW
-    phone_onboard_title: 'ابدأ طلبك',
-    phone_onboard_sub: 'ما تحتاج حساب. بس رقم جوالك وخلاص.',
-    phone_label: 'رقم جوالك',
-    phone_placeholder: '05XXXXXXXX',
-    phone_send_otp: 'أرسل كود التحقق',
-    phone_sending: 'يرسل...',
-    phone_otp_label: 'كود التحقق',
-    phone_otp_placeholder: 'الكود المكون من 6 أرقام',
-    phone_otp_hint: 'وصلك كود لجوالك',
-    phone_otp_dev_hint: 'كودك هو:',
-    phone_verify: 'تحقق وابدأ',
-    phone_verifying: 'يتحقق...',
-    phone_resend: 'أرسل كود جديد',
-    phone_err_invalid: 'رقم الجوال غلط. تأكد من الرقم.',
-    phone_err_otp: 'الكود غلط أو انتهت صلاحيته. جرب ثاني.',
-    phone_err_generic: 'صار خطأ. حاول مرة ثانية.',
-    phone_change: 'غيّر الرقم',
-
-    // QUICK ACTIONS
-    quick_action_store: 'فحص محل',
-    quick_action_delivery: 'توصيل',
-    quick_action_photo: 'صور أو فيديو',
-    quick_action_errand: 'مشوار',
-    quick_action_custom: 'طلب خاص',
-    quick_action_store_desc: 'شيك على محل أو مكان',
-    quick_action_delivery_desc: 'وصّل شي من أي مكان',
-    quick_action_photo_desc: 'صوّر أو صوّر فيديو',
-    quick_action_errand_desc: 'سوّي مشوار عني',
-    quick_action_custom_desc: 'أي طلب ثاني',
-
-    // WORKER MATCH CARDS
-    match_title: 'أشخاص متاحين الحين',
-    match_sub: 'اختار من أرسل له طلبك أو نختار لك أفضل شخص تلقائياً',
-    match_online: 'أونلاين',
-    match_offline: 'مو متاح',
-    match_tasks_done: 'طلب نجز',
-    match_send: 'أرسل له الطلب',
-    match_auto: 'اختيار تلقائي',
-    match_auto_sub: 'نختار لك أفضل شخص متاح',
-
-    // TASK STATUS BAR
-    taskbar_new: 'طلب جديد',
-    taskbar_accepted: 'تم القبول',
-    taskbar_in_progress: 'جاري التنفيذ',
-    taskbar_done: 'خلص',
-
-    // NAV UPDATES
-    nav_my_tasks: 'طلباتي',
-    nav_become_worker: 'اشتغل معنا',
-    nav_worker_login: 'دخول للعاملين',
-
-    // WORKER ONBOARDING FORM
-    worker_form_title: 'سجّل كعامل',
-    worker_form_sub: 'عبّي بياناتك عشان تبدأ تقبل طلبات',
-    worker_form_fullname: 'اسمك الكامل',
-    worker_form_fullname_ph: 'أحمد العتيبي',
-    worker_form_phone: 'رقم جوالك',
-    worker_form_phone_ph: '05XXXXXXXX',
-    worker_form_city: 'مدينتك',
-    worker_form_city_ph: 'الرياض',
-    worker_form_nationality: 'جنسيتك',
-    worker_form_nationality_ph: 'سعودي',
-    worker_form_bio: 'نبذة عنك (اختياري)',
-    worker_form_bio_ph: 'اكتب شوية عن نفسك ومهاراتك...',
-    worker_form_submit: 'سجّل الحين',
-    worker_form_submitting: 'يسجّل...',
-    worker_form_err_name: 'اكتب اسمك الكامل.',
-    worker_form_err_phone: 'اكتب رقم جوالك.',
-    worker_form_err_city: 'اكتب مدينتك.',
-
-    // AVAILABILITY
-    avail_online: 'متاح',
-    avail_busy: 'مشغول',
-    avail_offline: 'أوفلاين',
-    avail_toggle_label: 'حالتك:',
-    avail_go_online: 'اشتغل الحين',
-    avail_go_offline: 'وقّف التنبيهات',
-
-    // NOTIFICATIONS
-    notif_title: 'الإشعارات',
-    notif_empty: 'ما عندك إشعارات الحين',
-    notif_mark_read: 'علّم الكل مقروء',
-    notif_task_accepted: 'قبل أحد طلبك',
-    notif_new_message: 'رسالة جديدة',
-    notif_task_completed: 'اتنجز الطلب',
-    notif_new_task: 'طلب جديد يناسبك',
-
-    // TASK STATES (new simplified)
-    taskstate_live: 'مباشر',
-    taskstate_accepted: 'تم القبول',
-    taskstate_in_progress: 'جاري',
-    taskstate_waiting_confirm: 'بانتظار تأكيدك',
-    taskstate_completed: 'خلص',
-    taskstate_cancelled: 'ملغي',
-
-    // CUSTOMER DASHBOARD
-    cust_active_task: 'طلبك المباشر',
-    cust_no_active: 'ما عندك طلب مباشر الحين',
-    cust_no_active_sub: 'اكتب اللي تبيه وبدأ في ثواني.',
-    cust_start_now: 'اطلب الحين',
-    cust_confirm_done: 'تأكيد الإنجاز',
-    cust_confirming: 'يؤكد...',
-    cust_confirmed_msg: 'أكدت إنجاز الطلب. شكراً!',
-    cust_proof_title: 'صور وملفات التسليم',
-    cust_proof_empty: 'ما رفع العامل صور بعد.',
-    cust_past_tasks: 'طلباتك السابقة',
-    cust_worker_name: 'العامل',
-
-    // WORKER TASK CARD
-    worker_new_badge: 'جديد',
-    worker_accept_instant: 'اقبل الطلب',
-    worker_already_taken: 'اتقبل من شخص ثاني',
-    worker_proof_upload: 'ارفع صور التسليم',
-    worker_proof_uploading: 'يرفع...',
-    worker_confirm_complete: 'أنهِ الطلب',
-    worker_online_status: 'أنت متاح — تنبيهات الطلبات شغّالة',
-    worker_offline_status: 'أنت أوفلاين — ما راح تجيك طلبات',
-  },
-
-  en: {
-    // COMMON
-    loading: 'Loading...',
-    cancel: 'Cancel',
-    back: 'Back',
-    search: 'Search',
-    filter: 'Filter',
-    all: 'All',
-
-    // NAVBAR
-    nav_how_it_works: 'How it Works',
-    nav_features: 'Features',
-    nav_trust: 'Trust & Safety',
-    nav_sign_in: 'Sign In',
-    nav_get_started: 'Get Started',
-    nav_account: 'Account',
-    nav_my_dashboard: 'My Dashboard',
-    nav_worker_panel: 'Worker Panel',
-    nav_admin_panel: 'Admin Panel',
-    nav_sign_out: 'Sign Out',
-
-    // LANDING
-    hero_badge: 'AI-Powered Task Marketplace for Saudi Arabia',
-    hero_title_1: 'Your tasks, done by',
-    hero_title_2: 'verified humans',
-    hero_subtitle: 'Describe any task in plain language. Our AI understands, structures, and connects you with trusted Saudi workers who execute it perfectly.',
-    hero_input_placeholder: 'Describe your task in Arabic or English…',
-    hero_try_text: 'Try: "Book my car renewal at Absher" or "Design my brand identity"',
-    hero_start_task: 'Start a Task',
-    hero_become_worker: 'Become a Worker',
-    hero_free: 'Free to post tasks',
-    hero_verified: 'Verified workers only',
-    hero_secure: 'Secure payments',
-
-    stat_tasks: 'Tasks Completed',
-    stat_workers: 'Verified Workers',
-    stat_satisfaction: 'Satisfaction Rate',
-    stat_response: 'Avg. Response Time',
-    stat_tasks_val: '10,000+',
-    stat_workers_val: '2,400+',
-    stat_satisfaction_val: '98%',
-    stat_response_val: '< 2hrs',
-
-    section_how_badge: 'Simple Process',
-    section_how_title: 'How Amerni Works',
-    section_how_sub: 'From idea to execution in minutes. No back-and-forth. No confusion.',
-
-    step1_title: 'Describe Your Task',
-    step1_desc: 'Type your request in plain language — in Arabic or English. Our AI understands what you need instantly.',
-    step2_title: 'AI Structures It',
-    step2_desc: 'The AI converts your request into a structured task with category, pricing, and timeline estimates.',
-    step3_title: 'Human Expert Executes',
-    step3_desc: 'A verified, trusted worker accepts and completes your task with real-time updates and chat.',
-
-    section_features_badge: 'Platform Features',
-    section_features_title: 'Built for the Modern Kingdom',
-    section_features_sub: 'Everything you need to get real tasks done — with AI intelligence and human expertise.',
-
-    feat_ai_title: 'AI Task Understanding',
-    feat_ai_desc: 'Natural language processing that understands your intent and structures tasks automatically.',
-    feat_verified_title: 'Verified Workers',
-    feat_verified_desc: 'Every worker is vetted with national ID verification and manual approval for trusted tasks.',
-    feat_tracking_title: 'Real-time Tracking',
-    feat_tracking_desc: 'Follow every step of task execution with live updates and in-app messaging.',
-    feat_saudi_title: 'Saudi-First Design',
-    feat_saudi_desc: 'Built for the Kingdom — Absher, government services, local businesses, Arabic support.',
-    feat_secure_title: 'Secure Payments',
-    feat_secure_desc: 'Funds held in escrow until task completion. Your money is always protected.',
-    feat_quality_title: '5-Star Quality',
-    feat_quality_desc: 'Rated workers with transparent track records ensure premium execution every time.',
-
-    section_trust_badge: 'Trust & Safety',
-    section_trust_title: 'Built on trust. Powered by verification.',
-    section_trust_body: "In Saudi Arabia, trust is everything. That's why every worker on Amerni goes through rigorous identity verification, background checks, and manual approval before serving clients.",
-
-    trust_1: 'Workers verified with Saudi National ID',
-    trust_2: 'Government service specialists on platform',
-    trust_3: 'Escrow payment protection',
-    trust_4: 'Dispute resolution team',
-    trust_5: 'PDPL-compliant data privacy',
-    trust_6: 'Arabic and English support',
-
-    cta_badge: 'Ready to get started?',
-    cta_title: 'Your tasks, handled by experts',
-    cta_body: 'Join thousands of Saudis who trust Amerni for getting things done — from government appointments to creative projects.',
-    cta_first_task: 'Start Your First Task',
-    cta_worker_btn: 'Become a Worker',
-
-    footer_rights: '© 2025 Amerni. Built for Saudi Arabia. All rights reserved.',
-    footer_privacy: 'Privacy',
-    footer_terms: 'Terms',
-    footer_support: 'Support',
-
-    // EXAMPLE TASKS
-    example_1: 'Book a government appointment on Absher for me',
-    example_2: 'Design a professional logo for my coffee shop',
-    example_3: 'Write a business plan for a food delivery startup',
-    example_4: 'Find me the best real estate deals in Riyadh',
-
-    // CATEGORIES
-    cat_Admin: 'Admin',
-    cat_Design: 'Design',
-    cat_Research: 'Research',
-    cat_Personal: 'Personal',
-    cat_Business: 'Business',
-    cat_Legal: 'Legal',
-    cat_Tech: 'Tech',
-    cat_Writing: 'Writing',
-    cat_Other: 'Other',
-
-    // URGENCY
-    urgency_low: 'Low',
-    urgency_medium: 'Medium',
-    urgency_high: 'High',
-    urgency_urgent: 'Urgent',
-
-    // STATUS
-    status_pending: 'Pending',
-    status_ai_processing: 'AI Processing',
-    status_waiting_for_worker: 'Finding Worker',
-    status_in_progress: 'In Progress',
-    status_completed: 'Completed',
-    status_disputed: 'Disputed',
-    status_cancelled: 'Cancelled',
-
-    // VERIFICATION
-    verify_none: 'Unverified',
-    verify_basic: 'Basic',
-    verify_verified: 'Verified',
-    verify_trusted: 'Trusted',
-
-    // AUTH MODAL
-    auth_sign_in_tab: 'Sign In',
-    auth_create_tab: 'Create Account',
-    auth_full_name: 'Full Name',
-    auth_full_name_placeholder: 'Ahmed Al-Rashidi',
-    auth_email: 'Email Address',
-    auth_email_placeholder: 'you@example.com',
-    auth_phone: 'Phone (Optional)',
-    auth_phone_placeholder: '+966 5X XXX XXXX',
-    auth_password: 'Password',
-    auth_password_placeholder_signup: 'Min. 8 characters',
-    auth_password_placeholder_login: 'Your password',
-    auth_submit_signin: 'Sign In to Amerni',
-    auth_submit_signup: 'Create Account',
-    auth_no_account: "Don't have an account?",
-    auth_have_account: 'Already have an account?',
-    auth_signup_link: 'Sign Up',
-    auth_signin_link: 'Sign In',
-    auth_terms: 'By continuing, you agree to our Terms of Service and Privacy Policy.',
-    auth_err_name: 'Please enter your full name.',
-    auth_err_password: 'Password must be at least 8 characters.',
-    auth_err_exists: 'An account with this email already exists.',
-    auth_err_invalid: 'Invalid email or password. Please try again.',
-
-    // USER DASHBOARD
-    dash_welcome: 'Welcome back,',
-    dash_subtitle: 'Manage and track your tasks',
-    dash_new_task_btn: 'New Task',
-    dash_new_task_title: 'New Task',
-    dash_new_task_sub: 'Describe what you need done',
-    dash_active: 'Active Tasks',
-    dash_completed_stat: 'Completed',
-    dash_total: 'Total Tasks',
-    dash_no_tasks: 'No tasks yet',
-    dash_no_tasks_sub: 'Create your first task and let AI handle the rest.',
-    dash_create_task: 'Create Task',
-    dash_est_budget: 'Est. Budget',
-    dash_urgency: 'Urgency',
-    dash_created: 'Created',
-    dash_verification: 'Verification',
-    dash_verify_required: 'Required',
-    dash_verify_not_required: 'Not required',
-    dash_attachments: 'Attachments',
-    dash_no_attachments: 'No attachments yet.',
-    dash_back_tasks: 'Back to Tasks',
-
-    ai_greeting: "Hi! I'm your AI task assistant. Tell me what you need done — in Arabic or English — and I'll structure it and find you a verified worker.",
-    ai_placeholder: 'Describe your task in Arabic or English…',
-    ai_structured: "I've structured your task. Here's what I found:",
-    ai_error: 'Something went wrong. Please try again.',
-    ai_rephrase: "Sorry, I had trouble understanding that. Could you rephrase your request?",
-    ai_refine_reply: "No problem! Tell me more about what you need and I'll adjust.",
-    ai_label: 'AI Assistant',
-    ai_post_task: 'Post Task',
-    ai_refine: 'Refine',
-    ai_est_price: 'Est. Price',
-
-    task_chat_title: 'Task Chat',
-    task_chat_placeholder: 'Send a message…',
-    task_chat_waiting: 'Waiting for a worker to accept your task…',
-    task_chat_empty: 'No messages yet. Once a worker accepts your task, you can chat here.',
-
-    // WORKER DASHBOARD
-    worker_title: 'Worker Dashboard',
-    worker_tab_available: 'Available Tasks',
-    worker_tab_my_tasks: 'My Tasks',
-    worker_earnings: 'Earnings',
-    worker_completed: 'Completed',
-    worker_rating: 'Rating',
-    worker_active: 'Active Tasks',
-    worker_no_tasks: 'No available tasks right now. Check back soon!',
-    worker_no_my_tasks: "You haven't accepted any tasks yet. Browse available tasks to get started.",
-    worker_accept: 'Accept Task',
-    worker_mark_complete: 'Mark as Complete',
-    worker_verify_req: 'Verification Req.',
-    worker_chat_title: 'Chat with Client',
-    worker_chat_placeholder: 'Send a message to the client…',
-    worker_chat_accept_first: 'Accept the task to start chatting',
-    worker_upload_title: 'Upload Files',
-    worker_upload_sub: 'Upload work files and deliverables here.',
-    worker_upload_click: 'Click to upload',
-    worker_pending_approval: 'Pending Approval',
-    worker_system_msg: 'A worker has accepted your task and will begin immediately.',
-    worker_back: 'Back',
-    worker_budget: 'Budget Range',
-    worker_posted: 'Posted',
-
-    become_worker_title: 'Become a Worker',
-    become_worker_sub: 'Join our verified network of workers and start earning by completing tasks for clients across Saudi Arabia.',
-    become_worker_p1: 'Set your own hours and availability',
-    become_worker_p2: 'Choose tasks that match your skills',
-    become_worker_p3: 'Get paid securely through the platform',
-    become_worker_p4: 'Build your reputation with ratings',
-    become_worker_btn: 'Join as a Worker',
-
-    // ADMIN
-    admin_title: 'Admin Panel',
-    admin_sub: 'Manage the platform — users, tasks, and worker verifications.',
-    admin_tab_overview: 'Overview',
-    admin_tab_users: 'Users',
-    admin_tab_tasks: 'Tasks',
-    admin_tab_workers: 'Workers',
-    admin_total_users: 'Total Users',
-    admin_verified_workers: 'Verified Workers',
-    admin_active_tasks: 'Active Tasks',
-    admin_disputes: 'Disputes',
-    admin_registered: 'Registered accounts',
-    admin_active_on: 'Active on platform',
-    admin_in_progress_desc: 'Currently in progress',
-    admin_needs_attention: 'Needs attention',
-    admin_pending_approvals: 'Pending Worker Approvals',
-    admin_applied: 'Applied',
-    admin_approve: 'Approve',
-    admin_reject: 'Reject',
-    admin_revoke: 'Revoke',
-    admin_resolve: 'Resolve',
-    admin_cancel_task: 'Cancel',
-    admin_recent_tasks: 'Recent Tasks',
-    admin_budget: 'Budget',
-    admin_search_users: 'Search users…',
-    admin_search_tasks: 'Search tasks…',
-    admin_col_user: 'User',
-    admin_col_role: 'Role',
-    admin_col_phone: 'Phone',
-    admin_col_joined: 'Joined',
-    admin_no_name: 'No name',
-    admin_pending_badge: 'Pending',
-    admin_approved_badge: 'Approved',
-
-    // PHONE OTP FLOW
-    phone_onboard_title: 'Start Your Task',
-    phone_onboard_sub: "No account needed. Just your phone number.",
-    phone_label: 'Your Phone Number',
-    phone_placeholder: '05XXXXXXXX',
-    phone_send_otp: 'Send Verification Code',
-    phone_sending: 'Sending...',
-    phone_otp_label: 'Verification Code',
-    phone_otp_placeholder: '6-digit code',
-    phone_otp_hint: 'We sent a code to your phone',
-    phone_otp_dev_hint: 'Your code is:',
-    phone_verify: 'Verify & Start',
-    phone_verifying: 'Verifying...',
-    phone_resend: 'Resend Code',
-    phone_err_invalid: 'Invalid phone number. Please check and try again.',
-    phone_err_otp: 'Incorrect or expired code. Please try again.',
-    phone_err_generic: 'Something went wrong. Please try again.',
-    phone_change: 'Change Number',
-
-    // QUICK ACTIONS
-    quick_action_store: 'Store Check',
-    quick_action_delivery: 'Delivery',
-    quick_action_photo: 'Photo / Video',
-    quick_action_errand: 'Errand',
-    quick_action_custom: 'Custom Task',
-    quick_action_store_desc: 'Check a shop or location',
-    quick_action_delivery_desc: 'Deliver something anywhere',
-    quick_action_photo_desc: 'Take photos or record video',
-    quick_action_errand_desc: 'Run an errand for me',
-    quick_action_custom_desc: 'Any other request',
-
-    // WORKER MATCH CARDS
-    match_title: 'Available Workers Now',
-    match_sub: 'Choose who to send your task to, or let us auto-match you',
-    match_online: 'Online',
-    match_offline: 'Offline',
-    match_tasks_done: 'tasks done',
-    match_send: 'Send Task',
-    match_auto: 'Auto-Match',
-    match_auto_sub: "We'll pick the best available worker for you",
-
-    // TASK STATUS BAR
-    taskbar_new: 'New',
-    taskbar_accepted: 'Accepted',
-    taskbar_in_progress: 'In Progress',
-    taskbar_done: 'Done',
-
-    // NAV UPDATES
-    nav_my_tasks: 'My Tasks',
-    nav_become_worker: 'Become a Worker',
-    nav_worker_login: 'Worker Login',
-
-    // WORKER ONBOARDING FORM
-    worker_form_title: 'Join as a Worker',
-    worker_form_sub: 'Fill in your details to start accepting tasks',
-    worker_form_fullname: 'Full Name',
-    worker_form_fullname_ph: 'Ahmed Al-Otaibi',
-    worker_form_phone: 'Phone Number',
-    worker_form_phone_ph: '05XXXXXXXX',
-    worker_form_city: 'Your City',
-    worker_form_city_ph: 'Riyadh',
-    worker_form_nationality: 'Nationality',
-    worker_form_nationality_ph: 'Saudi',
-    worker_form_bio: 'Short Bio (optional)',
-    worker_form_bio_ph: 'Tell us about yourself and your skills…',
-    worker_form_submit: 'Register Now',
-    worker_form_submitting: 'Registering…',
-    worker_form_err_name: 'Please enter your full name.',
-    worker_form_err_phone: 'Please enter your phone number.',
-    worker_form_err_city: 'Please enter your city.',
-
-    // AVAILABILITY
-    avail_online: 'Available',
-    avail_busy: 'Busy',
-    avail_offline: 'Offline',
-    avail_toggle_label: 'Status:',
-    avail_go_online: 'Go Online',
-    avail_go_offline: 'Go Offline',
-
-    // NOTIFICATIONS
-    notif_title: 'Notifications',
-    notif_empty: 'No notifications yet',
-    notif_mark_read: 'Mark all as read',
-    notif_task_accepted: 'Worker accepted your task',
-    notif_new_message: 'New message',
-    notif_task_completed: 'Task completed',
-    notif_new_task: 'New matching task',
-
-    // TASK STATES (new simplified)
-    taskstate_live: 'Live',
-    taskstate_accepted: 'Accepted',
-    taskstate_in_progress: 'In Progress',
-    taskstate_waiting_confirm: 'Awaiting Confirmation',
-    taskstate_completed: 'Completed',
-    taskstate_cancelled: 'Cancelled',
-
-    // CUSTOMER DASHBOARD
-    cust_active_task: 'Your Live Task',
-    cust_no_active: 'No active task right now',
-    cust_no_active_sub: 'Write what you need and start in seconds.',
-    cust_start_now: 'Request Now',
-    cust_confirm_done: 'Confirm Completion',
-    cust_confirming: 'Confirming…',
-    cust_confirmed_msg: 'You confirmed task completion. Thank you!',
-    cust_proof_title: 'Delivery Photos & Files',
-    cust_proof_empty: 'Worker has not uploaded proof yet.',
-    cust_past_tasks: 'Past Tasks',
-    cust_worker_name: 'Worker',
-
-    // WORKER TASK CARD
-    worker_new_badge: 'New',
-    worker_accept_instant: 'Accept Task',
-    worker_already_taken: 'Taken by another worker',
-    worker_proof_upload: 'Upload Proof Photos',
-    worker_proof_uploading: 'Uploading…',
-    worker_confirm_complete: 'Mark Complete',
-    worker_online_status: 'You are online — task notifications active',
-    worker_offline_status: 'You are offline — no task notifications',
-  },
-} as const;
-
-export type TranslationKey = keyof typeof translations['ar'];
-
-export function timeAgo(dateStr: string, lang: Lang): string {
-  const seconds = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
-  if (lang === 'ar') {
-    if (seconds < 60) return 'الحين';
-    if (seconds < 3600) return `قبل ${Math.floor(seconds / 60)} دقيقة`;
-    if (seconds < 86400) return `قبل ${Math.floor(seconds / 3600)} ساعة`;
-    return `قبل ${Math.floor(seconds / 86400)} يوم`;
-  }
-  if (seconds < 60) return 'just now';
-  if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
-  if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
-  return `${Math.floor(seconds / 86400)}d ago`;
-}
-
-export function formatSAR(amount: number, lang: Lang): string {
-  if (lang === 'ar') return `${amount.toLocaleString('ar-SA')} ريال`;
-  return `SAR ${amount.toLocaleString()}`;
-}
+/*
+  # Realtime + Atomic Task Accept + Profile Auto-Creation
+
+  1. Realtime
+     - Enable realtime publication for tasks, task_messages, profiles tables
+       so Supabase channel subscriptions work correctly
+
+  2. Atomic task accept function
+     - `accept_task(p_task_id uuid, p_worker_id uuid)` 
+     - Uses advisory lock pattern: only one caller wins when multiple workers
+       try to accept the same task simultaneously
+     - Returns 'ok' on success, 'already_taken' if task was already assigned,
+       'not_found' if task does not exist or is not in waiting_for_worker state
+
+  3. Profile auto-creation trigger
+     - Ensures every new auth.users row gets a corresponding profiles row
+     - Safe: uses ON CONFLICT DO NOTHING so it never overwrites existing profiles
+     - Reads phone from user_metadata if present
+
+  4. RLS additions
+     - Workers can read all waiting_for_worker tasks (for feed)
+     - Workers can update tasks they are assigned to (for status changes)
+*/
+
+-- ── 1. Realtime ──────────────────────────────────────────────────────────────
+-- Add tables to the supabase_realtime publication (idempotent)
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_publication_tables
+    WHERE pubname = 'supabase_realtime' AND tablename = 'tasks'
+  ) THEN
+    ALTER PUBLICATION supabase_realtime ADD TABLE tasks;
+  END IF;
+
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_publication_tables
+    WHERE pubname = 'supabase_realtime' AND tablename = 'task_messages'
+  ) THEN
+    ALTER PUBLICATION supabase_realtime ADD TABLE task_messages;
+  END IF;
+
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_publication_tables
+    WHERE pubname = 'supabase_realtime' AND tablename = 'profiles'
+  ) THEN
+    ALTER PUBLICATION supabase_realtime ADD TABLE profiles;
+  END IF;
+END $$;
+
+-- ── 2. Atomic task accept function ───────────────────────────────────────────
+CREATE OR REPLACE FUNCTION accept_task(p_task_id uuid, p_worker_id uuid)
+RETURNS text
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_status task_status;
+  v_rows   int;
+BEGIN
+  -- Lock the specific task row to prevent concurrent accepts
+  SELECT status INTO v_status
+  FROM tasks
+  WHERE id = p_task_id
+  FOR UPDATE;
+
+  IF NOT FOUND THEN
+    RETURN 'not_found';
+  END IF;
+
+  IF v_status <> 'waiting_for_worker' THEN
+    RETURN 'already_taken';
+  END IF;
+
+  UPDATE tasks
+  SET
+    status    = 'in_progress',
+    worker_id = p_worker_id,
+    updated_at = now()
+  WHERE id = p_task_id;
+
+  GET DIAGNOSTICS v_rows = ROW_COUNT;
+
+  IF v_rows = 0 THEN
+    RETURN 'already_taken';
+  END IF;
+
+  -- Insert system message into chat
+  INSERT INTO task_messages (task_id, sender_id, content, is_system_message)
+  VALUES (p_task_id, p_worker_id, 'تم قبول الطلب — بدأ العامل الشغل.', true);
+
+  RETURN 'ok';
+END;
+$$;
+
+-- ── 3. Profile auto-creation trigger ────────────────────────────────────────
+CREATE OR REPLACE FUNCTION handle_new_user()
+RETURNS trigger
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+BEGIN
+  INSERT INTO public.profiles (id, full_name, phone, role)
+  VALUES (
+    NEW.id,
+    COALESCE(NEW.raw_user_meta_data->>'full_name', ''),
+    COALESCE(NEW.raw_user_meta_data->>'phone', ''),
+    'user'
+  )
+  ON CONFLICT (id) DO NOTHING;
+  RETURN NEW;
+END;
+$$;
+
+DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+CREATE TRIGGER on_auth_user_created
+  AFTER INSERT ON auth.users
+  FOR EACH ROW EXECUTE FUNCTION handle_new_user();
+
+-- ── 4. RLS policy additions ──────────────────────────────────────────────────
+
+-- Workers can see all open tasks in the feed
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'tasks' AND policyname = 'Workers can view open tasks'
+  ) THEN
+    CREATE POLICY "Workers can view open tasks"
+      ON tasks FOR SELECT
+      TO authenticated
+      USING (
+        status = 'waiting_for_worker'
+        OR user_id = auth.uid()
+        OR worker_id = auth.uid()
+      );
+  END IF;
+END $$;
+
+-- Workers can update tasks assigned to them (e.g. mark complete)
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'tasks' AND policyname = 'Workers can update assigned tasks'
+  ) THEN
+    CREATE POLICY "Workers can update assigned tasks"
+      ON tasks FOR UPDATE
+      TO authenticated
+      USING (worker_id = auth.uid() OR user_id = auth.uid())
+      WITH CHECK (worker_id = auth.uid() OR user_id = auth.uid());
+  END IF;
+END $$;
+
+-- Users can insert their own tasks
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'tasks' AND policyname = 'Users can insert own tasks'
+  ) THEN
+    CREATE POLICY "Users can insert own tasks"
+      ON tasks FOR INSERT
+      TO authenticated
+      WITH CHECK (user_id = auth.uid());
+  END IF;
+END $$;
+
+-- Anyone authenticated can read messages for tasks they participate in
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'task_messages' AND policyname = 'Participants can view messages'
+  ) THEN
+    CREATE POLICY "Participants can view messages"
+      ON task_messages FOR SELECT
+      TO authenticated
+      USING (
+        EXISTS (
+          SELECT 1 FROM tasks t
+          WHERE t.id = task_messages.task_id
+            AND (t.user_id = auth.uid() OR t.worker_id = auth.uid())
+        )
+      );
+  END IF;
+END $$;
+
+-- Participants can send messages
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'task_messages' AND policyname = 'Participants can send messages'
+  ) THEN
+    CREATE POLICY "Participants can send messages"
+      ON task_messages FOR INSERT
+      TO authenticated
+      WITH CHECK (
+        sender_id = auth.uid()
+        AND EXISTS (
+          SELECT 1 FROM tasks t
+          WHERE t.id = task_messages.task_id
+            AND (t.user_id = auth.uid() OR t.worker_id = auth.uid())
+        )
+      );
+  END IF;
+END $$;
+
+-- Profiles are readable by the owner
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'profiles' AND policyname = 'Users can read own profile'
+  ) THEN
+    CREATE POLICY "Users can read own profile"
+      ON profiles FOR SELECT
+      TO authenticated
+      USING (auth.uid() = id);
+  END IF;
+END $$;
+
+-- Profiles are updatable by the owner
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'profiles' AND policyname = 'Users can update own profile'
+  ) THEN
+    CREATE POLICY "Users can update own profile"
+      ON profiles FOR UPDATE
+      TO authenticated
+      USING (auth.uid() = id)
+      WITH CHECK (auth.uid() = id);
+  END IF;
+END $$;
+
+-- Profiles can be created for own user (for guest sign-up flow)
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'profiles' AND policyname = 'Users can insert own profile'
+  ) THEN
+    CREATE POLICY "Users can insert own profile"
+      ON profiles FOR INSERT
+      TO authenticated
+      WITH CHECK (auth.uid() = id);
+  END IF;
+END $$;

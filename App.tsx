@@ -1,70 +1,104 @@
 /**
- * TaskTracker.tsx
- * تتبع مرئي لحالة الطلب — مثل TaskRabbit
+ * App.tsx — النسخة الكاملة النهائية
  */
-import { CheckCircle, Clock, User, Star, Circle } from 'lucide-react';
+import { useState } from 'react';
+import { useAuth } from './contexts/AuthContext';
+import { useApp } from './contexts/AppContext';
+import { LandingPage } from './pages/LandingPage';
+import { UserDashboard } from './pages/UserDashboard';
+import { WorkerDashboard } from './pages/WorkerDashboard';
+import { AdminPanel } from './pages/AdminPanel';
+import { WorkerRegister } from './pages/WorkerRegister';
+import { WorkerSearch } from './pages/WorkerSearch';
+import { Navbar } from './components/layout/Navbar';
+import AuthModal from './pages/AuthModal';
+import { LegalPage } from './pages/LegalPage';
 
-interface TaskTrackerProps {
-  status: string;
-  negotiationStatus?: string | null;
-}
+function App() {
+  const { user, loading, profile } = useAuth();
+  const { authModalOpen, legalDoc } = useApp();
+  const [showWorkerRegister, setShowWorkerRegister] = useState(false);
+  const [showWorkerSearch, setShowWorkerSearch] = useState(false);
 
-const STEPS = [
-  { key: 'pending',            label: 'الطلب مستلم',       icon: Circle },
-  { key: 'waiting_for_worker', label: 'نبحث عن عامل',      icon: Clock },
-  { key: 'negotiation',        label: 'التفاوض على السعر',  icon: User },
-  { key: 'in_progress',        label: 'جاري التنفيذ',       icon: User },
-  { key: 'completed',          label: 'مكتمل',              icon: Star },
-];
-
-function getActiveStep(status: string, negotiationStatus?: string | null): number {
-  if (status === 'completed') return 4;
-  if (status === 'in_progress') {
-    return negotiationStatus === 'pending' ? 2 : 3;
-  }
-  if (status === 'waiting_for_worker') return 1;
-  return 0;
-}
-
-export function TaskTracker({ status, negotiationStatus }: TaskTrackerProps) {
-  const active = getActiveStep(status, negotiationStatus);
-  if (status === 'cancelled' || status === 'disputed') return null;
-
-  return (
-    <div className="px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-xl">
-      <p className="text-xs text-zinc-500 mb-3 font-medium">حالة الطلب</p>
-      <div className="flex items-start">
-        {STEPS.map((step, i) => {
-          const done = i < active;
-          const current = i === active;
-          const Icon = step.icon;
-          return (
-            <div key={step.key} className="flex items-center flex-1 last:flex-none">
-              <div className="flex flex-col items-center">
-                <div className={`w-7 h-7 rounded-full flex items-center justify-center transition-all ${
-                  done    ? 'bg-emerald-500' :
-                  current ? 'bg-amber-500 ring-4 ring-amber-500/20' :
-                            'bg-zinc-800'
-                }`}>
-                  {done ? (
-                    <CheckCircle size={14} className="text-white" />
-                  ) : (
-                    <Icon size={12} className={current ? 'text-black' : 'text-zinc-600'} />
-                  )}
-                </div>
-                <p className={`text-xs mt-1.5 text-center leading-tight max-w-16 ${
-                  done ? 'text-emerald-400' : current ? 'text-amber-400 font-medium' : 'text-zinc-600'
-                }`}>
-                  {step.label}
-                </p>
-              </div>
-              {i < STEPS.length - 1 && (
-                <div className={`flex-1 h-0.5 mx-1 mb-5 transition-all ${done ? 'bg-emerald-500' : 'bg-zinc-800'}`} />
-              )}
-            </div>
-          );
-        })}
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#080808] flex items-center justify-center">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-8 h-8 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" />
+          <span className="text-zinc-500 text-sm">يحمّل...</span>
+        </div>
       </div>
-    </div>
+    );
+  }
+
+  // Legal modal
+  if (legalDoc) {
+    return <LegalPage />;
+  }
+
+  // Worker registration flow
+  if (showWorkerRegister && user) {
+    return (
+      <>
+        <Navbar />
+        <WorkerRegister
+          onSuccess={() => setShowWorkerRegister(false)}
+          onBack={() => setShowWorkerRegister(false)}
+        />
+      </>
+    );
+  }
+
+  // Worker search page
+  if (showWorkerSearch) {
+    return (
+      <>
+        <Navbar />
+        <WorkerSearch onClose={() => setShowWorkerSearch(false)} />
+      </>
+    );
+  }
+
+  // Not logged in
+  if (!user) {
+    return (
+      <>
+        <Navbar />
+        <LandingPage />
+        {authModalOpen && <AuthModal />}
+      </>
+    );
+  }
+
+  // Admin
+  if (profile?.role === 'admin') {
+    return (
+      <>
+        <Navbar />
+        <AdminPanel />
+      </>
+    );
+  }
+
+  // Worker — check if needs to complete registration
+  if (profile?.role === 'worker') {
+    return (
+      <>
+        <Navbar />
+        <WorkerDashboard />
+        {authModalOpen && <AuthModal />}
+      </>
+    );
+  }
+
+  // Regular user
+  return (
+    <>
+      <Navbar />
+      <UserDashboard />
+      {authModalOpen && <AuthModal />}
+    </>
   );
 }
+
+export default App;
